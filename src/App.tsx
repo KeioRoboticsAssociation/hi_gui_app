@@ -11,7 +11,7 @@ import AllScrollLock from "./AllScrollLock";
 import Home from "./Home";
 
 const ros = new ROSLIB.Ros({
-  url: "ws://localhost:9090",
+  url: "ws://ubuntu.local:9090",
 });
 
 const topic = new ROSLIB.Topic({
