@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
+import ROSLIB from "roslib";
 import {
   Root,
   StyledButton,
@@ -16,6 +17,8 @@ import InputLabel from "@mui/material/InputLabel";
 import Typography from "@mui/material/Typography";
 import StyleTab from "./Tab";
 import Field from "./Field";
+
+const [state, setState] = useState(0);
 
 const StyledHome = styled(Paper)(({ theme: Any }) => ({
   // padding: theme.spacing(8),
@@ -48,6 +51,23 @@ const StyleState = styled.div(({ theme }) => ({
   left: "5%",
 }));
 
+const ros = new ROSLIB.Ros({
+  url: "ws://ubuntu.local:9090",
+});
+
+const stateTopic = new ROSLIB.Topic({
+  ros: ros,
+  name: '/state_data',
+  messageType: 'Int32MultiArray',
+});
+
+stateTopic.subscribe((message: any) => {
+  // Do something with the received message
+  setState(message.data[0]);
+  console.log(message);
+});
+
+
 function Clock() {
   const [sec, setSec] = useState(0);
 
@@ -55,7 +75,7 @@ function Clock() {
     setSec(180);
   }, []);
 
-  const handleClick = () => {
+  const handleClick = () => {``
     const interval = setInterval(() => {
       setSec((sec) => {
         if (sec === 0) {
@@ -77,7 +97,6 @@ function Clock() {
 }
 
 function State(){
-  const [state, setState] = useState(0);
   return(
     <StyleState>
       <p style={{ fontStyle: "italic" ,fontSize:'25pt',margin:'5%',textAlign: 'right',right:'30px'}}>State</p>
