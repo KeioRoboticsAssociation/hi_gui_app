@@ -70,22 +70,27 @@ stateTopic.subscribe((message: any) => {
 
 function Clock() {
   const [sec, setSec] = useState(0);
+  const [flg, setFlg] = useState(false);
 
   useEffect(() => {
     setSec(180);
   }, []);
 
-  const handleClick = () => {``
-    const interval = setInterval(() => {
-      setSec((sec) => {
-        if (sec === 0) {
-          clearInterval(interval);
-          setSec(180);
-        }
-        return sec - 1;
-      });
-    }, 1000);
-    return () => clearInterval(interval);
+  const handleClick = () => {
+    if (!flg) {
+      setFlg(true);
+      const interval = setInterval(() => {
+        setSec((sec) => {
+          if (sec === 0) {
+            setFlg(true);
+            clearInterval(interval);
+            setSec(180);
+          }
+          return sec - 1;
+        });
+      }, 1000);
+      return () => clearInterval(interval);
+    }
   };
 
   return (
