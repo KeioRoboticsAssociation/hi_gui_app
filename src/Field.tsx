@@ -95,7 +95,7 @@ export default function Field() {
           style={{ top: "35.9%", left: "52%" }}
           onClick={() => {
             const msg = new ROSLIB.Message({
-              data: "3",
+              data: 3,
             });
             indextopic.publish(msg);
           }}
