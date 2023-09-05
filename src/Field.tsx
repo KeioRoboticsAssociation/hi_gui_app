@@ -127,7 +127,7 @@ export default function Field() {
           5
         </StyledButton>
 
-        <StyledButton variant="outlined" style={{ top: "8.8%", left: "7%" }}
+        {/* <StyledButton variant="outlined" style={{ top: "8.8%", left: "7%" }}
         onClick={() => {
           const msg = new ROSLIB.Message({
             data: 6,
@@ -135,7 +135,7 @@ export default function Field() {
           indextopic.publish(msg);
         }}>
           6
-        </StyledButton>
+        </StyledButton> */}
         <StyledButton variant="outlined" style={{ top: "8.8%", left: "16.6%" }}
         onClick={() => {
           const msg = new ROSLIB.Message({
@@ -199,7 +199,7 @@ export default function Field() {
         }}>
           13
         </StyledButton>
-        <StyledButton variant="outlined" style={{ top: "8.8%", left: "83.8%" }}
+        {/* <StyledButton variant="outlined" style={{ top: "8.8%", left: "83.8%" }}
         onClick={() => {
           const msg = new ROSLIB.Message({
             data: 14,
@@ -207,7 +207,7 @@ export default function Field() {
           indextopic.publish(msg);
         }}>
           14
-        </StyledButton>
+        </StyledButton> */}
 
         <StyledButton variant="outlined" style={{ top: "61%", left: "88.9%" }}
         onClick={() => {
