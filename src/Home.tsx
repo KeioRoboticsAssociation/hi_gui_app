@@ -18,7 +18,7 @@ import Typography from "@mui/material/Typography";
 import StyleTab from "./Tab";
 import Field from "./Field";
 
-const [state, setState] = useState(0);
+let state = 0;
 
 const StyledHome = styled(Paper)(({ theme: Any }) => ({
   // padding: theme.spacing(8),
@@ -63,7 +63,7 @@ const stateTopic = new ROSLIB.Topic({
 
 stateTopic.subscribe((message: any) => {
   // Do something with the received message
-  setState(message.data[0]);
+  // setState(message.data[0]);
   console.log(message);
 });
 
@@ -113,6 +113,7 @@ function State(){
 function Home() {
   const [connection, setConnection] = useState("");
 
+  const [state, setState] = useState(0);
   const handleChange = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
