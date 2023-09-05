@@ -94,7 +94,6 @@ function State() {
       messageType: "std_msgs/Int32MultiArray",
     });
     listener.subscribe((message:any) => {
-      console.log(message.data[0]);
       setState(message.data[0]);
     });
   }, []);
