@@ -18,8 +18,6 @@ import Typography from "@mui/material/Typography";
 import StyleTab from "./Tab";
 import Field from "./Field";
 
-let state = 0;
-
 const StyledHome = styled(Paper)(({ theme: Any }) => ({
   // padding: theme.spacing(8),
   color: "#FFFFFF",
@@ -43,7 +41,6 @@ const StyleClock = styled.div(({ theme }) => ({
   zIndex: 1,
 }));
 
-
 const StyleState = styled.div(({ theme }) => ({
   position: "absolute",
   width: "auto",
@@ -52,21 +49,8 @@ const StyleState = styled.div(({ theme }) => ({
 }));
 
 const ros = new ROSLIB.Ros({
-  url: "ws://ubuntu.local:9090",
+  url: "ws://moyuboo.local:9090",
 });
-
-const stateTopic = new ROSLIB.Topic({
-  ros: ros,
-  name: '/state_data',
-  messageType: 'Int32MultiArray',
-});
-
-stateTopic.subscribe((message: any) => {
-  // Do something with the received message
-  // setState(message.data[0]);
-  console.log(message);
-});
-
 
 function Clock() {
   const [sec, setSec] = useState(0);
@@ -101,19 +85,48 @@ function Clock() {
   );
 }
 
-function State(){
-  return(
+function State() {
+  const [state, setState] = useState(0);
+  useEffect(() => {
+    const listener = new ROSLIB.Topic({
+      ros: ros,
+      name: "/state_data",
+      messageType: "std_msgs/Int32MultiArray",
+    });
+    listener.subscribe((message:any) => {
+      console.log(message.data[0]);
+      setState(message.data[0]);
+    });
+  }, []);
+  return (
     <StyleState>
-      <p style={{ fontStyle: "italic" ,fontSize:'25pt',margin:'5%',textAlign: 'right',right:'30px'}}>State</p>
-      <p style={{fontSize:'55pt',margin:'5%',textAlign: 'right', right:'0'}}>{state}</p>
+      <p
+        style={{
+          fontStyle: "italic",
+          fontSize: "25pt",
+          margin: "5%",
+          textAlign: "right",
+          right: "30px",
+        }}
+      >
+        State
+      </p>
+      <p
+        style={{
+          fontSize: "55pt",
+          margin: "5%",
+          textAlign: "right",
+          right: "0",
+        }}
+      >
+        {state}
+      </p>
     </StyleState>
-  )
+  );
 }
 
 function Home() {
   const [connection, setConnection] = useState("");
-
-  const [state, setState] = useState(0);
   const handleChange = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
