@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import ROSLIB from "roslib";
-import {
-  Root,
-  StyledButton,
-  StyledFormControl,
-  StyledPaper,
-  StyledTitle,
-} from "./style";
+import { Root } from "./style";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import Typography from "@mui/material/Typography";
-import StyleTab from "./Tab";
+import Switch from "@mui/material/Switch";
 import Field from "./Field";
 
 const StyledHome = styled(Paper)(({ theme: Any }) => ({
@@ -46,6 +34,53 @@ const StyleState = styled.div(({ theme }) => ({
   width: "auto",
   top: "65%",
   left: "5%",
+}));
+
+const Android12Switch = styled(Switch)(({ theme }) => ({
+  padding: 8,
+  transform: "scale(2)",
+  position: "absolute",
+  zIndex: 1,
+  top: "18%",
+  left: "4%",
+  opacity: 1,
+  "& .Mui-checked": {
+    "& + .MuiSwitch-track": {
+      borderRadius: 22 / 2,
+      backgroundColor: "#8682ff",
+      "&:before, &:after": {
+        content: '""',
+        position: "absolute",
+        top: "50%",
+        transform: "translateY(-50%) scale(4)", // adjust scale to make switch bigger
+        width: 16,
+        height: 16,
+      },
+    },
+    "&:before": {},
+    "&:after": {},
+  },
+  
+  "& .MuiSwitch-thumb": {
+    boxShadow: "none",
+    width: 16,
+    height: 16,
+    margin: 2,
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 22 / 2,
+    backgroundColor: "#ff0000",
+    "&:before, &:after": {
+      content: '""',
+      position: "absolute",
+      top: "50%",
+      transform: "translateY(-50%) scale(4)", // adjust scale to make switch bigger
+      width: 16,
+      height: 16,
+    },
+  },
+
+
 }));
 
 const ros = new ROSLIB.Ros({
@@ -93,7 +128,7 @@ function State() {
       name: "/state_data",
       messageType: "std_msgs/Int32MultiArray",
     });
-    listener.subscribe((message:any) => {
+    listener.subscribe((message: any) => {
       setState(message.data[0]);
     });
   }, []);
@@ -147,12 +182,18 @@ function Home() {
     // }, 100);
   }, []);
 
+  const [color, setColor] = useState(true);
+  const handleSwitchChange = () => {
+    setColor(!color);
+  };
+
   return (
     <Root>
       <StyledHome>
         <Clock />
+        <Android12Switch onChange={handleSwitchChange} />
         <State />
-        <Field />
+        <Field color={!color} />
       </StyledHome>
     </Root>
   );
