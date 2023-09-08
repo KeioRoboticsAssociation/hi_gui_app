@@ -374,7 +374,7 @@ export default function Field({color}) {
         onChange={() => {
           setIsManual(!isManual);
           const msg = new ROSLIB.Message({
-            data: isManual,
+            data: !isManual,
           });
           isManualTopic.publish(msg);
         }}
@@ -741,7 +741,7 @@ export default function Field({color}) {
         onChange={() => {
           setIsManual(!isManual);
           const msg = new ROSLIB.Message({
-            data: isManual,
+            data: !isManual,
           });
           isManualTopic.publish(msg);
         }}/>
