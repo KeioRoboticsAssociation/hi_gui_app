@@ -87,6 +87,12 @@ const cmdtopic = new ROSLIB.Topic({
   messageType: "std_msgs/String",
 });
 
+const emgtopic = new ROSLIB.Topic({
+  ros: ros,
+  name: "/emg",
+  messageType: "std_msgs/Bool",
+});
+
 export default function Field({color}) {
   const [isManual, setIsManual] = useState(false);
   if (color) {
@@ -447,9 +453,9 @@ export default function Field({color}) {
           }}
           onClick={() => {
             const msg = new ROSLIB.Message({
-              data: "s",
+              data: true,
             });
-            cmdtopic.publish(msg);
+            emgtopic.publish(msg);
           }}
         >
           STOP
