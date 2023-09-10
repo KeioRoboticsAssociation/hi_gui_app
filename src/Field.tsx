@@ -89,7 +89,7 @@ const cmdtopic = new ROSLIB.Topic({
 
 const emgtopic = new ROSLIB.Topic({
   ros: ros,
-  name: "/emg",
+  name: "/emergency",
   messageType: "std_msgs/Bool",
 });
 
@@ -274,7 +274,18 @@ export default function Field({color}) {
           }}>
             14
           </StyledButton> */}
-
+          <StyledButton
+            variant="outlined"
+            style={{ top: "23%", left: "78.7%" }}
+            onClick={() => {
+              const msg = new ROSLIB.Message({
+                data: 15,
+              });
+              indextopic.publish(msg);
+            }}
+          >
+            15
+          </StyledButton>
           <StyledButton
             variant="outlined"
             style={{ top: "61%", left: "90.4%" }}
@@ -361,6 +372,19 @@ export default function Field({color}) {
             }}
           >
             6
+          </StyledButton>
+
+          <StyledButton
+            variant="outlined"
+            style={{ top: "23%", left: "70%" }}
+            onClick={() => {
+              const msg = new ROSLIB.Message({
+                data: 7,
+              });
+              shootingtopic.publish(msg);
+            }}
+          >
+            7
           </StyledButton>
 
           <img
@@ -644,6 +668,19 @@ export default function Field({color}) {
 
           <StyledButton
             variant="outlined"
+            style={{ top: "23%", left: "21%" }}
+            onClick={() => {
+              const msg = new ROSLIB.Message({
+                data: 15,
+              });
+              indextopic.publish(msg);
+            }}
+          >
+            15
+          </StyledButton>
+
+          <StyledButton
+            variant="outlined"
             style={{ top: "61%", left: "3%" }}
             onClick={() => {
               const msg = new ROSLIB.Message({
@@ -728,6 +765,19 @@ export default function Field({color}) {
             }}
           >
             6
+          </StyledButton>
+
+          <StyledButton
+            variant="outlined"
+            style={{ top: "23%", left: "30%" }}
+            onClick={() => {
+              const msg = new ROSLIB.Message({
+                data: 7,
+              });
+              shootingtopic.publish(msg);
+            }}
+          >
+            7
           </StyledButton>
 
           <img
@@ -819,9 +869,9 @@ export default function Field({color}) {
           }}
           onClick={() => {
             const msg = new ROSLIB.Message({
-              data: "s",
+              data: true,
             });
-            cmdtopic.publish(msg);
+            emgtopic.publish(msg);
           }}
         >
           STOP
