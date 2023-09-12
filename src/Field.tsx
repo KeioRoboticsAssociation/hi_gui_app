@@ -36,8 +36,8 @@ const ColorSwitch = styled(Switch)(({ theme }) => ({
   transform: "scale(2.5)",
   position: "absolute",
   zIndex: 1,
-  top: "56%",
-  left: "90%",
+  top: "57%",
+  left: "7%",
   "& .MuiSwitch-track": {
     borderRadius: 22 / 2,
     "&:before, &:after": {
@@ -843,6 +843,80 @@ export default function Field({color}) {
           }}
         >
           RELEASE
+        </DefaultButton>
+        <DefaultButton
+          variant="contained"
+          style={{ top: "55%", left: "86%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "c0",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          C0
+        </DefaultButton>
+        <DefaultButton
+          variant="contained"
+          style={{ top: "55%", left: "92.8%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "r0",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          R0
+        </DefaultButton>
+
+        <DefaultButton
+          variant="contained"
+          style={{ top: "46%", left: "86%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "c1",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          C1
+        </DefaultButton>
+        <DefaultButton
+          variant="contained"
+          style={{ top: "46%", left: "92.8%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "r1",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          R1
+        </DefaultButton>
+
+        <DefaultButton
+          variant="contained"
+          style={{ top: "37%", left: "86%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "c2",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          C2
+        </DefaultButton>
+        <DefaultButton
+          variant="contained"
+          style={{ top: "37%", left: "92.8%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "r2",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          R2
         </DefaultButton>
         <DefaultButton
           variant="contained"
