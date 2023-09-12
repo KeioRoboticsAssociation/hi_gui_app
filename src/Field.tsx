@@ -93,6 +93,12 @@ const emgtopic = new ROSLIB.Topic({
   messageType: "std_msgs/Bool",
 });
 
+const stptopic = new ROSLIB.Topic({
+  ros: ros,
+  name: "/stp_homing",
+  messageType: "std_msgs/Bool",
+});
+
 export default function Field({color}) {
   const [isManual, setIsManual] = useState(false);
   if (color) {
@@ -920,7 +926,7 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          style={{ top: "25%", left: "86%", width: "160px" }}
+          style={{ top: "25%", left: "86%", width: "70px" }}
           onClick={() => {
             const msg = new ROSLIB.Message({
               data: "i",
@@ -929,6 +935,18 @@ export default function Field({color}) {
           }}
         >
           INIT
+        </DefaultButton>
+        <DefaultButton
+          variant="contained"
+          style={{ top: "25%", left: "92.8%", width: "70px" }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: "i",
+            });
+            cmdtopic.publish(msg);
+          }}
+        >
+          STP
         </DefaultButton>
 
         <DefaultButton
