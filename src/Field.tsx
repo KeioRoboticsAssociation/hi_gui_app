@@ -941,9 +941,9 @@ export default function Field({color}) {
           style={{ top: "25%", left: "92.8%", width: "70px" }}
           onClick={() => {
             const msg = new ROSLIB.Message({
-              data: "i",
+              data: true,
             });
-            cmdtopic.publish(msg);
+            stptopic.publish(msg);
           }}
         >
           STP
