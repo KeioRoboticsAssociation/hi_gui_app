@@ -1116,8 +1116,6 @@ export default function Field({color}) {
             borderRadius: "100%",
           }}
           onClick={() => {
-              const audio = new Audio(pos);
-              audio.play();
             const msg = new ROSLIB.Message({
               data: true,
             });
