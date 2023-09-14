@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import { Routes, Route } from "react-router-dom";
 import ROSLIB from "roslib";
 import "./index.css";
 import "./App.css";
@@ -9,6 +10,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import "./fonts/Oxanium-Regular.ttf";
 import AllScrollLock from "./AllScrollLock";
 import Home from "./Home";
+import Stop from "./Stop";
 
 const ros = new ROSLIB.Ros({
   url: "ws://moyuboo.local:9090",
@@ -41,12 +43,36 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Home />
-      <CssBaseline />
-      <AllScrollLock />
-    </ThemeProvider>
+    <div>
+      <Routes>
+        <Route path="/" element={<Screen />} />
+        <Route path="/em" element={<Emergency />} />
+      </Routes>
+    </div>
   );
 }
+
+function Screen() {
+  return (
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <Home />
+        <CssBaseline />
+        <AllScrollLock />
+      </ThemeProvider>
+    </div>
+  );
+}
+
+function Emergency() {
+  return (
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <Stop />
+      </ThemeProvider>
+    </div>
+  );
+}
+
 
 export default App;

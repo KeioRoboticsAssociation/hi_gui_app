@@ -8,6 +8,7 @@ import ROSLIB from "roslib";
 import next from "./assets/next.mp3";
 import pos from "./assets/pos.mp3";
 import pecho from "./assets/pecho.mp3";
+import shoot from "./assets/shoot.mp3";
 
 const StyledField = styled.div(({ theme }) => ({
   height: "100%",
@@ -784,7 +785,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "61%", left: "3%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 0,
@@ -798,7 +799,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "66%", left: "3%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 1,
@@ -813,7 +814,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "74%", left: "3%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 2,
@@ -842,7 +843,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "88%", left: "3%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 4,
@@ -856,7 +857,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "93%", left: "3%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 5,
@@ -871,7 +872,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "72.5%", left: "13.5%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 6,
@@ -885,7 +886,7 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "82.5%", left: "13.5%" }}
             onClick={() => {
-              const audio = new Audio(pos);
+              const audio = new Audio(shoot);
               audio.play();
               const msg = new ROSLIB.Message({
                 data: 8,
