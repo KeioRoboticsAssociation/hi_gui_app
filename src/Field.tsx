@@ -5,6 +5,9 @@ import Switch from "@mui/material/Switch";
 import blueImg from "./img-blue.svg";
 import redImg from "./img-red.svg";
 import ROSLIB from "roslib";
+import next from "./assets/next.mp3";
+import pos from "./assets/pos.mp3";
+import pecho from "./assets/pecho.mp3";
 
 const StyledField = styled.div(({ theme }) => ({
   height: "100%",
@@ -109,6 +112,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "12.6%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 0,
               });
@@ -121,6 +126,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "26.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 1,
               });
@@ -133,6 +140,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "40.1%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 2,
               });
@@ -145,6 +154,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "53.5%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 3,
               });
@@ -157,6 +168,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "67.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 4,
               });
@@ -169,6 +182,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "80.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 5,
               });
@@ -180,6 +195,8 @@ export default function Field({color}) {
 
           {/* <StyledButton variant="outlined" style={{ top: "8.8%", left: "7%" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: 6,
             });
@@ -191,6 +208,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "18.1%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 7,
               });
@@ -203,6 +222,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "27.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 8,
               });
@@ -215,6 +236,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "37.2%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 9,
               });
@@ -227,6 +250,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "46.9%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 10,
               });
@@ -239,6 +264,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "56.5%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 11,
               });
@@ -251,6 +278,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "66.1%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 12,
               });
@@ -263,6 +292,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "75.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 13,
               });
@@ -273,6 +304,8 @@ export default function Field({color}) {
           </StyledButton>
           {/* <StyledButton variant="outlined" style={{ top: "8.8%", left: "83.8%" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: 14,
             });
@@ -284,6 +317,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "23%", left: "78.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 15,
               });
@@ -296,6 +331,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "61%", left: "90.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 0,
               });
@@ -308,6 +345,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "66%", left: "90.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 1,
               });
@@ -321,6 +360,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "74%", left: "90.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 2,
               });
@@ -333,6 +374,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "79%", left: "90.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 3,
               });
@@ -346,6 +389,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "88%", left: "90.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 4,
               });
@@ -358,6 +403,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "93%", left: "90.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 5,
               });
@@ -371,6 +418,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "77.5%", left: "80%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 6,
               });
@@ -384,6 +433,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "23%", left: "70%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 7,
               });
@@ -413,6 +464,8 @@ export default function Field({color}) {
           variant="outlined"
           style={{ top: "88%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "n",
             });
@@ -425,6 +478,8 @@ export default function Field({color}) {
           variant="outlined"
           style={{ top: "88%", left: "2%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "b",
             });
@@ -438,6 +493,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "65%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "c",
             });
@@ -450,6 +507,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "75%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "r",
             });
@@ -462,6 +521,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "25%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "i",
             });
@@ -482,6 +543,8 @@ export default function Field({color}) {
             borderRadius: "100%",
           }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: true,
             });
@@ -500,6 +563,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "12.6%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 0,
               });
@@ -512,6 +577,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "26.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 1,
               });
@@ -524,6 +591,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "40.1%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 2,
               });
@@ -536,6 +605,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "53.5%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 3,
               });
@@ -548,6 +619,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "67.4%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 4,
               });
@@ -560,6 +633,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "35.9%", left: "80.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 5,
               });
@@ -571,6 +646,8 @@ export default function Field({color}) {
 
           {/* <StyledButton variant="outlined" style={{ top: "8.8%", left: "7%" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: 6,
             });
@@ -582,6 +659,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "18.1%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 7,
               });
@@ -594,6 +673,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "27.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 8,
               });
@@ -606,6 +687,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "37.2%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 9,
               });
@@ -618,6 +701,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "46.9%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 10,
               });
@@ -630,6 +715,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "56.5%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 11,
               });
@@ -642,6 +729,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "66.1%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 12,
               });
@@ -654,6 +743,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "8.8%", left: "75.7%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 13,
               });
@@ -664,6 +755,8 @@ export default function Field({color}) {
           </StyledButton>
           {/* <StyledButton variant="outlined" style={{ top: "8.8%", left: "83.8%" }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: 14,
             });
@@ -676,6 +769,8 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "23%", left: "21%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 15,
               });
@@ -689,94 +784,124 @@ export default function Field({color}) {
             variant="outlined"
             style={{ top: "61%", left: "3%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 0,
               });
               shootingtopic.publish(msg);
             }}
           >
-            0
+            A
           </StyledButton>
           <StyledButton
             variant="outlined"
             style={{ top: "66%", left: "3%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 1,
               });
               shootingtopic.publish(msg);
             }}
           >
-            1
+            B
           </StyledButton>
 
           <StyledButton
             variant="outlined"
             style={{ top: "74%", left: "3%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 2,
               });
               shootingtopic.publish(msg);
             }}
           >
-            2
+            C
           </StyledButton>
           <StyledButton
             variant="outlined"
             style={{ top: "79%", left: "3%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 3,
               });
               shootingtopic.publish(msg);
             }}
           >
-            3
+          D
           </StyledButton>
 
           <StyledButton
             variant="outlined"
             style={{ top: "88%", left: "3%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 4,
               });
               shootingtopic.publish(msg);
             }}
           >
-            4
+            E
           </StyledButton>
           <StyledButton
             variant="outlined"
             style={{ top: "93%", left: "3%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 5,
               });
               shootingtopic.publish(msg);
             }}
           >
-            5
+            F
           </StyledButton>
 
           <StyledButton
             variant="outlined"
-            style={{ top: "77.5%", left: "13.5%" }}
+            style={{ top: "72.5%", left: "13.5%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 6,
               });
               shootingtopic.publish(msg);
             }}
           >
-            6
+            G0
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            style={{ top: "82.5%", left: "13.5%" }}
+            onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
+              const msg = new ROSLIB.Message({
+                data: 8,
+              });
+              shootingtopic.publish(msg);
+            }}
+          >
+            G1
           </StyledButton>
 
           <StyledButton
             variant="outlined"
             style={{ top: "23%", left: "30%" }}
             onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
               const msg = new ROSLIB.Message({
                 data: 7,
               });
@@ -805,6 +930,8 @@ export default function Field({color}) {
           variant="outlined"
           style={{ top: "88%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(next);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "n",
             });
@@ -817,6 +944,8 @@ export default function Field({color}) {
           variant="outlined"
           style={{ top: "88%", left: "2%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(next);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "b",
             });
@@ -830,6 +959,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "65%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "c",
             });
@@ -842,6 +973,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "75%", left: "86%", width: "160px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "r",
             });
@@ -852,8 +985,11 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
+          color='secondary'
           style={{ top: "55%", left: "86%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "c0",
             });
@@ -864,8 +1000,11 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
+          color='secondary'
           style={{ top: "55%", left: "92.8%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "r0",
             });
@@ -877,8 +1016,11 @@ export default function Field({color}) {
 
         <DefaultButton
           variant="contained"
+          color="success"
           style={{ top: "46%", left: "86%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "c1",
             });
@@ -889,8 +1031,11 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
+          color="success"
           style={{ top: "46%", left: "92.8%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "r1",
             });
@@ -902,8 +1047,11 @@ export default function Field({color}) {
 
         <DefaultButton
           variant="contained"
+          color="warning"
           style={{ top: "37%", left: "86%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "c2",
             });
@@ -914,8 +1062,11 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
+          color="warning"
           style={{ top: "37%", left: "92.8%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "r2",
             });
@@ -928,6 +1079,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "25%", left: "86%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: "i",
             });
@@ -940,6 +1093,8 @@ export default function Field({color}) {
           variant="contained"
           style={{ top: "25%", left: "92.8%", width: "70px" }}
           onClick={() => {
+              const audio = new Audio(pecho);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: true,
             });
@@ -960,6 +1115,8 @@ export default function Field({color}) {
             borderRadius: "100%",
           }}
           onClick={() => {
+              const audio = new Audio(pos);
+              audio.play();
             const msg = new ROSLIB.Message({
               data: true,
             });
