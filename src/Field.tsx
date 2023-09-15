@@ -535,7 +535,7 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color='secondary'
+          color='success'
           style={{ top: "55%", left: "86%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -550,7 +550,7 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color='secondary'
+          color='success'
           style={{ top: "55%", left: "92.8%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -566,7 +566,6 @@ export default function Field({color}) {
 
         <DefaultButton
           variant="contained"
-          color="success"
           style={{ top: "46%", left: "86%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -581,7 +580,6 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color="success"
           style={{ top: "46%", left: "92.8%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -597,7 +595,6 @@ export default function Field({color}) {
 
         <DefaultButton
           variant="contained"
-          color="warning"
           style={{ top: "37%", left: "86%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -612,7 +609,6 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color="warning"
           style={{ top: "37%", left: "92.8%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -1105,7 +1101,7 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color='secondary'
+          color='success'
           style={{ top: "55%", left: "86%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -1120,7 +1116,7 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color='secondary'
+          color='success'
           style={{ top: "55%", left: "92.8%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -1136,7 +1132,6 @@ export default function Field({color}) {
 
         <DefaultButton
           variant="contained"
-          color="success"
           style={{ top: "46%", left: "86%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -1151,7 +1146,6 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color="success"
           style={{ top: "46%", left: "92.8%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -1167,7 +1161,6 @@ export default function Field({color}) {
 
         <DefaultButton
           variant="contained"
-          color="warning"
           style={{ top: "37%", left: "86%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
@@ -1182,7 +1175,6 @@ export default function Field({color}) {
         </DefaultButton>
         <DefaultButton
           variant="contained"
-          color="warning"
           style={{ top: "37%", left: "92.8%", width: "70px" }}
           onClick={() => {
               const audio = new Audio(pecho);
