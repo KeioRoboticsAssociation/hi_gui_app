@@ -197,7 +197,7 @@ function Home() {
   const handleSwitchChange = () => {
     setColor(!color);
   };
-  if (!isOn) {
+  if (1) {
     return (
       <Root>
         <StyledHome>
