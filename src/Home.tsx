@@ -88,7 +88,7 @@ const DefaultButton = styled(Button)(({ theme }) => ({
 }));
 
 const ros = new ROSLIB.Ros({
-  url: "ws://ubuntu.local:9090",
+  url: "ws://moyuboo.local:9090",
 });
 
 function Clock() {
