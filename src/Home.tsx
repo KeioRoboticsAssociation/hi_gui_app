@@ -5,6 +5,7 @@ import { Root } from "./style";
 import Paper from "@mui/material/Paper";
 import Switch from "@mui/material/Switch";
 import Field from "./Field";
+import Button from "@mui/material/Button";
 
 const StyledHome = styled(Paper)(({ theme: Any }) => ({
   // padding: theme.spacing(8),
@@ -60,7 +61,7 @@ const Android12Switch = styled(Switch)(({ theme }) => ({
     "&:before": {},
     "&:after": {},
   },
-  
+
   "& .MuiSwitch-thumb": {
     boxShadow: "none",
     width: 16,
@@ -79,12 +80,15 @@ const Android12Switch = styled(Switch)(({ theme }) => ({
       height: 16,
     },
   },
+}));
 
-
+const DefaultButton = styled(Button)(({ theme }) => ({
+  position: "absolute",
+  fontSize: "30px",
 }));
 
 const ros = new ROSLIB.Ros({
-  url: "ws://moyuboo.local:9090",
+  url: "ws://ubuntu.local:9090",
 });
 
 function Clock() {
@@ -119,6 +123,12 @@ function Clock() {
     </StyleClock>
   );
 }
+
+const comtopic = new ROSLIB.Topic({
+  ros: ros,
+  name: "/connect",
+  messageType: "std_msgs/Bool",
+});
 
 function State() {
   const [state, setState] = useState(0);
@@ -161,6 +171,7 @@ function State() {
 
 function Home() {
   const [connection, setConnection] = useState("");
+  const [isOn, setIsOn] = useState(false);
   const handleChange = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
@@ -186,17 +197,43 @@ function Home() {
   const handleSwitchChange = () => {
     setColor(!color);
   };
-
-  return (
-    <Root>
-      <StyledHome>
-        <Clock />
-        <Android12Switch onChange={handleSwitchChange} />
-        <State />
-        <Field color={!color} />
-      </StyledHome>
-    </Root>
-  );
+  if (!isOn) {
+    return (
+      <Root>
+        <StyledHome>
+          <Clock />
+          <Android12Switch onChange={handleSwitchChange} />
+          <State />
+          <DefaultButton
+            variant="contained"
+            color="success"
+            style={{ top: "28%", left: "3%", width: "160px", zIndex: 1 }}
+            onClick={() => {
+              const msg = new ROSLIB.Message({
+                data: true,
+              });
+              comtopic.publish(msg);
+              setIsOn(true);
+            }}
+          >
+            TURN ON
+          </DefaultButton>
+          <Field color={!color} />
+        </StyledHome>
+      </Root>
+    );
+  } else {
+    return (
+      <Root>
+        <StyledHome>
+          <Clock />
+          <Android12Switch onChange={handleSwitchChange} />
+          <State />
+          <Field color={!color} />
+        </StyledHome>
+      </Root>
+    );
+  }
 }
 
 export default Home;

@@ -13,7 +13,7 @@ import Home from "./Home";
 import Stop from "./Stop";
 
 const ros = new ROSLIB.Ros({
-  url: "ws://moyuboo.local:9090",
+  url: "ws://ubuntu.local:9090",
 });
 
 const topic = new ROSLIB.Topic({

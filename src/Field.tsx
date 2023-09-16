@@ -64,7 +64,7 @@ const ColorSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const ros = new ROSLIB.Ros({
-  url: "ws://moyuboo.local:9090",
+  url: "ws://ubuntu.local:9090",
 });
 
 const indextopic = new ROSLIB.Topic({
