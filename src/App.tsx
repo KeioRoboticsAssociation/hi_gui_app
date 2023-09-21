@@ -11,6 +11,7 @@ import "./fonts/Oxanium-Regular.ttf";
 import AllScrollLock from "./AllScrollLock";
 import Home from "./Home";
 import Stop from "./Stop";
+import AutoScreen from "./Auto";
 
 const ros = new ROSLIB.Ros({
   url: "ws://moyuboo.local:9090",
@@ -47,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Screen />} />
         <Route path="/em" element={<Emergency />} />
+        <Route path="/auto" element={<Auto />} />
       </Routes>
     </div>
   );
@@ -74,5 +76,14 @@ function Emergency() {
   );
 }
 
+function Auto(){
+  return(
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <AutoScreen />
+      </ThemeProvider>
+    </div>
+  )
+}
 
 export default App;
