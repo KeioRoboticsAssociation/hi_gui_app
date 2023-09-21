@@ -191,7 +191,7 @@ function State() {
 function AutoScreen() {
   const [connection, setConnection] = useState("");
   const [isOn, setIsOn] = useState(false);
-  const msg = ["待機中", "運転中"]
+  const msg = ["待機中", "運転中"];
   const handleChange = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
@@ -200,6 +200,30 @@ function AutoScreen() {
 
   const handleConnect = () => {
     // Connect to the selected connection
+  };
+
+  const [sec, setSec] = useState(0);
+  const [flg, setFlg] = useState(false);
+
+  useEffect(() => {
+    setSec(180);
+  }, []);
+  let interval: any;
+  const handleClick = () => {
+    if (!flg) {
+      setFlg(true);
+      interval = setInterval(() => {
+        setSec((sec) => {
+          if (sec === 0) {
+            setFlg(true);
+            clearInterval(interval);
+            setSec(180);
+          }
+          return sec - 1;
+        });
+      }, 1000);
+      return () => clearInterval(interval);
+    }
   };
 
   useEffect(() => {
@@ -225,12 +249,16 @@ function AutoScreen() {
     });
     listener.subscribe((message: any) => {
       setIsOn(message.data);
+      setSec(0)
     });
   }, []);
   return (
     <Root>
       <StyledHome>
-        <Clock />
+        <StyleClock onClick={handleClick}>
+          {("0" + Math.floor(sec / 60)).slice(-2)}:
+          {("0" + Math.floor(sec % 60)).slice(-2)}
+        </StyleClock>
         {/* <Android12Switch onChange={handleSwitchChange} /> */}
         <State />
         <DefaultButton
@@ -261,6 +289,7 @@ function AutoScreen() {
               data: true,
             });
             emgtopic.publish(msg);
+            setSec(0)
           }}
         >
           STOP
@@ -280,23 +309,31 @@ function AutoScreen() {
           INIT
         </DefaultButton>
         <DefaultButton
-            variant="contained"
-            color="success"
-            style={{ top: "60%", left: "40%", width: "240px", height: "120px", zIndex: 1,fontSize:60 }}
-            onClick={() => {
-              const msg = new ROSLIB.Message({
-                data: true,
-              });
-              autotopic.publish(msg);
-              setIsOn(true);
-            }}
-            disabled={isOn}
-          >
-            START
-          </DefaultButton>
-          <div style={{position:"absolute",top:"30%",fontSize:120}}>
-            {msg[Number(isOn)]}
-          </div>
+          variant="contained"
+          color="success"
+          style={{
+            top: "60%",
+            left: "40%",
+            width: "240px",
+            height: "120px",
+            zIndex: 1,
+            fontSize: 60,
+          }}
+          onClick={() => {
+            const msg = new ROSLIB.Message({
+              data: true,
+            });
+            autotopic.publish(msg);
+            setIsOn(true);
+            handleClick();
+          }}
+          disabled={isOn}
+        >
+          START
+        </DefaultButton>
+        <div style={{ position: "absolute", top: "30%", fontSize: 120 }}>
+          {msg[Number(isOn)]}
+        </div>
         {/* <Field color={!color} /> */}
       </StyledHome>
     </Root>
