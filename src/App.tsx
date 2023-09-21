@@ -8,6 +8,8 @@ import ConnectionScreen from "./Connection";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./fonts/Oxanium-Regular.ttf";
+import "./fonts/Oxanium-Bold.ttf";
+import "./fonts/NotoSansJP-Light.ttf";
 import AllScrollLock from "./AllScrollLock";
 import Home from "./Home";
 import Stop from "./Stop";
@@ -81,6 +83,7 @@ function Auto(){
     <div>
       <ThemeProvider theme={darkTheme}>
         <AutoScreen />
+        <AllScrollLock />
       </ThemeProvider>
     </div>
   )

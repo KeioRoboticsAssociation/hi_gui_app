@@ -4,6 +4,12 @@
   src: url('./fonts/Oxanium-Bold.ttf') format('truetype');
 }
 
+@font-face{
+  font-family: 'Noto Sans JP';
+  src: url('./fonts/NotoSansJP-Light.ttf') format('truetype');
+
+}
+
 .App {
   text-align: center;
   font-family: Oxanium!important;

@@ -21,6 +21,7 @@ const StyledHome = styled(Paper)(({ theme: Any }) => ({
   height: "95vh",
   position: "absolute",
   borderRadius: "40px",
+  fontFamily: "'Oxanium','Noto Sans JP'",
 }));
 
 const StyleClock = styled.div(({ theme }) => ({
@@ -29,6 +30,7 @@ const StyleClock = styled.div(({ theme }) => ({
   left: "40px",
   fontSize: "40pt",
   zIndex: 1,
+  fontFamily: "Oxanium",
 }));
 
 const StyleState = styled.div(({ theme }) => ({
@@ -36,51 +38,6 @@ const StyleState = styled.div(({ theme }) => ({
   width: "auto",
   top: "65%",
   left: "5%",
-}));
-
-const Android12Switch = styled(Switch)(({ theme }) => ({
-  padding: 8,
-  transform: "scale(2)",
-  position: "absolute",
-  zIndex: 1,
-  top: "18%",
-  left: "4%",
-  opacity: 1,
-  "& .Mui-checked": {
-    "& + .MuiSwitch-track": {
-      borderRadius: 22 / 2,
-      backgroundColor: "#8682ff",
-      "&:before, &:after": {
-        content: '""',
-        position: "absolute",
-        top: "50%",
-        transform: "translateY(-50%) scale(4)", // adjust scale to make switch bigger
-        width: 16,
-        height: 16,
-      },
-    },
-    "&:before": {},
-    "&:after": {},
-  },
-
-  "& .MuiSwitch-thumb": {
-    boxShadow: "none",
-    width: 16,
-    height: 16,
-    margin: 2,
-  },
-  "& .MuiSwitch-track": {
-    borderRadius: 22 / 2,
-    backgroundColor: "#ff0000",
-    "&:before, &:after": {
-      content: '""',
-      position: "absolute",
-      top: "50%",
-      transform: "translateY(-50%) scale(4)", // adjust scale to make switch bigger
-      width: 16,
-      height: 16,
-    },
-  },
 }));
 
 const DefaultButton = styled(Button)(({ theme }) => ({
@@ -313,7 +270,7 @@ function AutoScreen() {
           color="success"
           style={{
             top: "60%",
-            left: "40%",
+            left: "41%",
             width: "240px",
             height: "120px",
             zIndex: 1,
