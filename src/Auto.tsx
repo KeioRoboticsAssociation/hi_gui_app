@@ -96,7 +96,7 @@ const emgtopic = new ROSLIB.Topic({
 
 const cmdtopic = new ROSLIB.Topic({
   ros: ros,
-  name: "/command",
+  name: "/cmd_state",
   messageType: "std_msgs/String",
 });
 
