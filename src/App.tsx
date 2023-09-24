@@ -48,9 +48,9 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Screen />} />
-        <Route path="/em" element={<Emergency />} />
-        <Route path="/auto" element={<Auto />} />
+        <Route path="/hi_gui_app/" element={<Screen />} />
+        <Route path="/hi_gui_app/em" element={<Emergency />} />
+        <Route path="/hi_gui_app/auto" element={<Auto />} />
       </Routes>
     </div>
   );
